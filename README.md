@@ -137,7 +137,7 @@ The results of this casceding classification model are presented in Fig. 5:
 
 ---
 
-## Correction Phase and High Accuracy
+## Numerical error prediction
 
 Once the classification (both `ErrorType` and `En`) is achieved, a **simple linear regression model** is applied specifically to rows labeled with the predicted classes. This post-classification regression demonstrated *extremely high accuracy* in determining the required correction value.
 
