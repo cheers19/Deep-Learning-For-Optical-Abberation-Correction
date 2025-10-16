@@ -45,7 +45,7 @@ A simple, fully connected deep neural network (see Fig. 2) **failed to accuratel
 <div align="center">
 
   <img 
-    width="450" 
+    width="300" 
     src="https://github.com/user-attachments/assets/ecfeb197-6098-4f1b-b41e-6800d6e92328" 
     alt="old_model_architecture" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
