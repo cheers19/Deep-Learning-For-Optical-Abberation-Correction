@@ -21,7 +21,23 @@ Initial analysis revealed a crucial sparsity and dependency in the feature space
 
 This is presented in Fig. 1: 
 
+<img width="713" height="571" alt="Fig_1" src="https://github.com/user-attachments/assets/7456b6d2-3101-435b-830e-9582a1d255eb" />
 
+<div align="center">
+
+  <img 
+    width="500" 
+    src="https://github.com/user-attachments/assets/7456b6d2-3101-435b-830e-9582a1d255eb" 
+    alt="Fig_1" 
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+  />
+
+  <br>
+  **Fig. 1: the Zernike aberration coefficients for different ‘ErrorType’. left and right plots correspond to error values in the lower and upper quartile**
+  <br>
+  <br>
+
+</div>
 
 ---
 
