@@ -93,7 +93,7 @@ The results of this casceding classification model are presented in Fig. 5:
 <div align="center">
 
   <img 
-    width="300" 
+    width="500" 
     src="https://github.com/user-attachments/assets/cda5e373-cd14-4b40-9c46-ca7e8f693cd2" 
     alt="neural_network_architecture (1)" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
@@ -108,7 +108,7 @@ The results of this casceding classification model are presented in Fig. 5:
 <div align="center">
 
   <img 
-    width="700" 
+    width="500" 
     src="https://github.com/user-attachments/assets/d674fef4-d26f-4d5e-9944-97f231452d17" 
     alt="neural_network_error_confusion_matrix" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
@@ -123,7 +123,7 @@ The results of this casceding classification model are presented in Fig. 5:
 <div align="center">
 
   <img 
-    width="700" 
+    width="500" 
     src="https://github.com/user-attachments/assets/7b1b119f-69a4-43d1-a592-ccf4e3b24890" 
     alt="neural_network_parameter_confusion_matrix_sorted" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
