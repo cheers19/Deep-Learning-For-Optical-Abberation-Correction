@@ -82,7 +82,7 @@ Each aberration in the target column is defined as `ErrorType_En`, where:
 
 ### **Casceding Model Implementation**
 
-The final model (see Fig. 3) uses a cascading approach to improve classification accuracy and separate learning of input with different physical meaning (like Zernike numbers and modulation transfer functions):
+The final model (see Fig. 3) uses a cascading approach to improve classification accuracy and separate learning of input with different physical meaning (like wavefront abberation coefficients and visibility coefficients):
 
 1. **Dividing the input data:** We separate the data for learning two physically different input 
 2.  **ErrorType Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`ErrorType`***.
@@ -90,7 +90,50 @@ The final model (see Fig. 3) uses a cascading approach to improve classification
 
 The results of this casceding classification model are presented in Fig. 5:
 
+<div align="center">
 
+  <img 
+    width="300" 
+    src="https://github.com/user-attachments/assets/cda5e373-cd14-4b40-9c46-ca7e8f693cd2" 
+    alt="neural_network_architecture (1)" 
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+  />
+
+  <br>**Fig. 3: Cascade classification deep neural network**
+  <br>
+  <br>
+
+</div>
+
+<div align="center">
+
+  <img 
+    width="700" 
+    src="https://github.com/user-attachments/assets/d674fef4-d26f-4d5e-9944-97f231452d17" 
+    alt="neural_network_error_confusion_matrix" 
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+  />
+
+  <br>**Fig. 4: Aberration error type prediction using the cascading calssification model**
+  <br>
+  <br>
+
+</div>
+
+<div align="center">
+
+  <img 
+    width="700" 
+    src="https://github.com/user-attachments/assets/7b1b119f-69a4-43d1-a592-ccf4e3b24890" 
+    alt="neural_network_parameter_confusion_matrix_sorted" 
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+  />
+
+  <br>**Fig. 5: Optical element type prediction using the cascading calssification model**
+  <br>
+  <br>
+
+</div>
 
 ---
 
