@@ -136,6 +136,7 @@ The results of this casceding classification model are presented in Fig. 5:
 </div>
 
 ---
+**Further data need to be collected, as well as mixed error types to achieve a better classification accuracy**
 
 ## Numerical error prediction
 
