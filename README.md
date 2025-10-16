@@ -8,8 +8,8 @@ The dataset is structured to link system parameters to specific aberration types
 
 | Column Group | Description | Examples |
 | :--- | :--- | :--- |
-| **Target Columns** | The specific type of aberration and its numeric error value. | `Tilt_E1`, `Decenter_E3`, *Numeric Value* |
-| **Feature Columns** | System parameters used for prediction, varying in predictive relevance. | Wavefront Aberration Coefficients, Visibility, System $\text{FOV}$ |
+| **Target Columns** | Aberration error types and their respective numeric error value. | `Tilt_E1`, `Decenter_E3`, *Numeric Value* |
+| **Feature Columns** | System parameters. | Wavefront Aberration Coefficients and visibility|
 
 ### Exploratory Data Analysis (EDA) Insights
 
