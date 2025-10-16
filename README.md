@@ -38,7 +38,7 @@ This is presented in Fig. 1:
 
 ---
 
-## Model Architectures: 
+## Model Architectures 
 # Simple fully connected deep neural network
 A simple, fully connected deep neural network (see Fig. 2) **failed to accurately classify** the aberration types (see Fig. 3). 
 
