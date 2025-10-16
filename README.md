@@ -38,8 +38,8 @@ This is presented in Fig. 1:
 
 ---
 
-## Model Architectures 
-# Simple fully connected deep neural network
+# Model Architectures 
+## Simple fully connected deep neural network
 A simple, fully connected deep neural network (see Fig. 2) **failed to accurately classify** the aberration types (see Fig. 3). 
 
 <div align="center">
@@ -73,7 +73,7 @@ A simple, fully connected deep neural network (see Fig. 2) **failed to accuratel
 </div>
 
 This challenge was addressed by implementing a **cascading classification architecture** that breaks the prediction into two *dependent* steps:
-# cascade Classification
+## cascade Classification
 ### **Aberration Type Naming Convention**
 
 Each aberration in the target column is defined as `ErrorType_En`, where:
