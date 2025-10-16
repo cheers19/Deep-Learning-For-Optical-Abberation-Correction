@@ -30,7 +30,7 @@ This is presented in Fig. 1:
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
-  <br>**Fig. 1: the Zernike aberration coefficients for different ‘ErrorType’. left and right plots correspond to error values in the lower and upper quartile**
+  <br>**Fig. 1: The wavefront aberration coefficients for different ‘ErrorType’. left and right plots correspond to error values in the lower and upper quartile**
   <br>
   <br>
 
@@ -38,12 +38,42 @@ This is presented in Fig. 1:
 
 ---
 
-## Model Architecture: cascade Classification
+## Model Architectures: 
+# Simple fully connected deep neural network
+A simple, fully connected deep neural network (see Fig. 2) **failed to accurately classify** the aberration types (see Fig. 3). 
 
-A simple, fully connected deep neural network (see Fig. 2) **failed to accurately classify** the aberration types (see Fig. 4). This challenge was addressed by implementing a **cascading classification architecture** that breaks the prediction into two *dependent* steps:
+<div align="center">
 
+  <img 
+    width="700" 
+    src="https://github.com/user-attachments/assets/ecfeb197-6098-4f1b-b41e-6800d6e92328" 
+    alt="old_model_architecture" 
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+  />
 
+  <br>**Fig. 2: A simple, fully connected deep neural network**
+  <br>
+  <br>
 
+</div>
+
+<div align="center">
+
+  <img 
+    width="700" 
+    src="https://github.com/user-attachments/assets/0202e0a2-cf46-41f3-ba29-7c311ea5aad8" 
+    alt="classification with MLP without 2 stage model" 
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+  />
+
+  <br>**Fig. 3: A simple, fully connected deep neural network fails to predict the aberration error types**
+  <br>
+  <br>
+
+</div>
+
+This challenge was addressed by implementing a **cascading classification architecture** that breaks the prediction into two *dependent* steps:
+# cascade Classification
 ### **Aberration Type Naming Convention**
 
 Each aberration in the target column is defined as `ErrorType_En`, where:
