@@ -11,9 +11,8 @@ The dataset is structured to link system parameters to specific aberration types
 | **Target Columns** | Aberration error types and their respective numeric error value. | `Tilt_E1`, `Decenter_E3`, *Numeric Value* |
 | **Feature Columns** | System parameters. | Wavefront Aberration Coefficients and visibility|
 
-<div align="center"> 
-  **Note:** The *aberration error type* is composed of the **aberration type** and the **element name**, that is, for `Tilt_E1` the name 'Tilt' is the aberration type (which we denote as 'error_name') and the *element*, 'E1' (which we denote as 'parameter_name').
-</div>
+ 
+**Note:** The *aberration error type* is composed of the **aberration type** and the **element name**, that is, for `Tilt_E1` the name 'Tilt' is the aberration type (which we denote as 'error_name') and the *element*, 'E1' (which we denote as 'parameter_name').
 
 
 ### Exploratory Data Analysis (EDA) Insights
@@ -22,7 +21,7 @@ Initial analysis revealed a crucial sparsity and dependency in the feature space
 
 * For any given aberration type (e.g., 'Tilt', 'Decenter', etc.), **only a few aberration coefficients significantly contribute** to the prediction. Each unique aberration type is charecterised with a unique coefficients distribution.
 * The **relative fraction** (or importance) of this distribution **changes dynamically** with the numeric error value of the aberration type.
-* The distribution is independent of the element type (e.g., E1, E2, E3, etc.)
+* The distribution is independent of the element name (e.g., E1, E2, E3, etc.)
 
 This is presented in Fig. 1: 
 
@@ -81,19 +80,17 @@ This challenge was addressed by implementing a **cascading classification archit
 ## cascade Classification
 ### **Aberration Type Naming Convention**
 
-As mentioned, each aberration error type is represented with 
+As mentioned, each aberration error type is composed of 'error_name'+'parameter_name'. 
+Since every element ('parameter_name') can only experience certain types of aberrations ('error_name'), **it make sense to use a cascading classification model where the prediction of the aberration type preceds the element classification**.
 
-Each aberration in the target column is defined as `ErrorType_En`, where:
-* `ErrorType`: Categorical value (e.g., `tilt`, `decenter`).
-* `En`: Optical component index (e.g., `E1`, `E2`, `E3`).
 
 ### **Casceding Model Implementation**
 
 The final model (see Fig. 3) uses a cascading approach to improve classification accuracy and separate learning of input with different physical meaning (like wavefront abberation coefficients and visibility coefficients):
 
 1. **Dividing the input data:** We separate the data for learning two physically different input 
-2.  **ErrorType Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`ErrorType`***.
-3.  **Element Identification:** The outputs of the `ErrorType` layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of ***`En`*** (the optical component).
+2.  **Error type Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`error_name`***.
+3.  **Element Identification:** The outputs of the `error_name` layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of ***`parameter_name`*** (the optical component).
 
 The results of this casceding classification model are presented in Fig. 5:
 
@@ -136,7 +133,7 @@ The results of this casceding classification model are presented in Fig. 5:
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
-  <br>**Fig. 5: Optical element type prediction using the cascading calssification model**
+  <br>**Fig. 5: Optical element prediction using the cascading calssification model**
   <br>
   <br>
 
@@ -148,6 +145,6 @@ The results of this casceding classification model are presented in Fig. 5:
 
 ## Numerical error prediction
 
-Once the classification (both `ErrorType` and `En`) is achieved, a **simple linear regression model** is applied specifically to rows labeled with the predicted classes. This post-classification regression demonstrated *extremely high accuracy* in determining the required correction value.
+Once the classification (both `error_name` and `parameter_name`) is achieved, a **simple linear regression model** is applied specifically to rows labeled with the predicted classes. This post-classification regression demonstrated *extremely high accuracy* in determining the required correction value.
 
 This two-step process—casceding classification followed by focused regression—successfully addresses the data's inherent complexity and sparsity.
