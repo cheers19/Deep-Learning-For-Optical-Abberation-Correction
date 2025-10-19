@@ -65,8 +65,8 @@ A simple, fully connected deep neural network (see Fig. 2) **failed to accuratel
 
   <img 
     width="700" 
-    src="[https://github.com/user-attachments/assets/0202e0a2-cf46-41f3-ba29-7c311ea5aad8](https://github.com/user-attachments/assets/62b1c272-515d-45ea-a415-f51aa08b9ba5)" 
-    alt="neural_network_architecture_cascading" 
+    src="https://github.com/user-attachments/assets/56a29cda-892c-4267-8c0a-e01436ae3cdb" 
+    alt="classification with MLP without 2 stage model" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
