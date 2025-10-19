@@ -50,8 +50,8 @@ A simple, fully connected deep neural network (see Fig. 2) **failed to accuratel
 
   <img 
     width="300" 
-    src="https://github.com/user-attachments/assets/ecfeb197-6098-4f1b-b41e-6800d6e92328" 
-    alt="old_model_architecture" 
+    src="https://github.com/user-attachments/assets/d8b6c677-cc9c-442c-a9bf-4fbf932e1cca" 
+    alt="neural_network_architecture_NOT_cascading" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
