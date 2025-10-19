@@ -9,7 +9,7 @@ The dataset is structured to link system parameters to specific aberration types
 | Column Group | Description | Examples |
 | :--- | :--- | :--- |
 | **Target Columns** | Aberration error types and their respective numeric error value. | `Tilt_E1`, `Decenter_E3`, *Numeric Value* |
-| **Feature Columns** | System parameters. | Wavefront Aberration Coefficients and visibility|
+| **Feature Columns** | System parameters. | Wavefront Aberration Coefficients (Zernike C2,...,Zernike C37) and MTF score|
 
  
 **Note:** The *aberration error type* is composed of the **aberration type** and the **element name**, that is, for `Tilt_E1` the name 'Tilt' is the aberration type (which we denote as 'error_name') and the *element*, 'E1' (which we denote as 'parameter_name').
@@ -65,8 +65,8 @@ A simple, fully connected deep neural network (see Fig. 2) **failed to accuratel
 
   <img 
     width="700" 
-    src="https://github.com/user-attachments/assets/0202e0a2-cf46-41f3-ba29-7c311ea5aad8" 
-    alt="classification with MLP without 2 stage model" 
+    src="[https://github.com/user-attachments/assets/0202e0a2-cf46-41f3-ba29-7c311ea5aad8](https://github.com/user-attachments/assets/62b1c272-515d-45ea-a415-f51aa08b9ba5)" 
+    alt="neural_network_architecture_cascading" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
@@ -86,11 +86,10 @@ Since every element ('parameter_name') can only experience certain types of aber
 
 ### **Casceding Model Implementation**
 
-The final model (see Fig. 3) uses a cascading approach to improve classification accuracy and separate learning of input with different physical meaning (like wavefront abberation coefficients and visibility coefficients):
+The final model (see Fig. 3) uses a cascading approach to improve classification accuracy:
 
-1. **Dividing the input data:** We separate the data for learning two physically different input 
-2.  **Error type Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`error_name`***.
-3.  **Element Identification:** The outputs of the `error_name` layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of ***`parameter_name`*** (the optical component).
+1.  **Error type Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`error_name`***.
+2.  **Element Identification:** The outputs of the `error_name` layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of ***`parameter_name`*** (the optical component).
 
 The results of this casceding classification model are presented in Fig. 5:
 
@@ -98,8 +97,8 @@ The results of this casceding classification model are presented in Fig. 5:
 
   <img 
     width="500" 
-    src="https://github.com/user-attachments/assets/cda5e373-cd14-4b40-9c46-ca7e8f693cd2" 
-    alt="neural_network_architecture (1)" 
+    src="https://github.com/user-attachments/assets/914c9f8c-246b-4e84-b868-3d320ff1e112" 
+    alt="neural_network_architecture_cascading" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
@@ -113,8 +112,8 @@ The results of this casceding classification model are presented in Fig. 5:
 
   <img 
     width="500" 
-    src="https://github.com/user-attachments/assets/d674fef4-d26f-4d5e-9944-97f231452d17" 
-    alt="neural_network_error_confusion_matrix" 
+    src="https://github.com/user-attachments/assets/2db76324-b98e-4d18-9f01-54133969e4c7" 
+    alt="error_type_casceding_OneInputLayer" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
@@ -128,8 +127,8 @@ The results of this casceding classification model are presented in Fig. 5:
 
   <img 
     width="500" 
-    src="https://github.com/user-attachments/assets/7b1b119f-69a4-43d1-a592-ccf4e3b24890" 
-    alt="neural_network_parameter_confusion_matrix_sorted" 
+    src="https://github.com/user-attachments/assets/3bc368f7-1d12-40f7-b4af-95e9630cd4ed" 
+    alt="element_type_casceding_OneInputLayer" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
