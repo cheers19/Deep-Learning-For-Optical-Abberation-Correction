@@ -89,7 +89,7 @@ Since every element ('parameter_name') can only experience certain types of aber
 The final model (see Fig. 3) uses a cascading approach to improve classification accuracy:
 
 1.  **Error type Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`error_name`***.
-2.  **Element Identification:** The outputs of the `error_name` layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of ***`parameter_name`*** (the optical component).
+2.  **Element Identification:** The outputs of the **`error_name`** layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of **`parameter_name`** (the optical component).
 
 The results of this casceding classification model are presented in Fig. 5:
 
