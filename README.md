@@ -76,22 +76,25 @@ A simple, fully connected deep neural network (see Fig. 2) **failed to accuratel
 
 </div>
 
-This challenge was addressed by implementing a **cascading classification architecture** that breaks the prediction into two *dependent* steps:
-## cascade Classification
-### **Aberration Type Naming Convention**
-
+# Clssification architectures:
+The poor classification accuracy shown in Fig. 3 challenge was addressed by investigating two kinds of architecture:
 As mentioned, each aberration error type is composed of 'error_name'+'parameter_name'. 
-Since every element ('parameter_name') can only experience certain types of aberrations ('error_name'), **it make sense to use a cascading classification model where the prediction of the aberration type preceds the element classification**.
+Thus, I investigated two classification architectures:
+1. A neural network which **simultaneously** classifies 'error_name' and 'parameter_name'.
+2. A **cascading** neural network which *first* classifies the physical source of aberration:'error_name' and *uses that information* to predict the element under investigation: 'parameter_name'. 
 
+The 2nd architecture, **cascade classification**, yielded better results - **indicating that certain elements are more prone to certain aberrations**.
+This can also be seen in the EDA notebook. 
 
+## Cascade classification
 ### **Casceding Model Implementation**
 
-The final model (see Fig. 3) uses a cascading approach to improve classification accuracy:
+The cascaded architecture has the following form (see also Fig. 4):
 
 1.  **Error type Identification:** A layer recives the information learned by the two inputs and identifies the categorical value for ***`error_name`***.
 2.  **Element Identification:** The outputs of the **`error_name`** layer are **concatenated** with the initial input features. This combined output then serves as the input for another layer, which identifies the categorical value of **`parameter_name`** (the optical component).
 
-The results of this casceding classification model are presented in Fig. 5:
+The results of this casceding classification model are presented in Figs. 5-6:
 
 <div align="center">
 
@@ -102,7 +105,7 @@ The results of this casceding classification model are presented in Fig. 5:
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
-  <br>**Fig. 3: Cascade classification deep neural network**
+  <br>**Fig. 4: Cascade classification deep neural network**
   <br>
   <br>
 
@@ -117,7 +120,7 @@ The results of this casceding classification model are presented in Fig. 5:
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
-  <br>**Fig. 4: Aberration error type prediction using the cascading calssification model**
+  <br>**Fig. 5: Aberration error type prediction using the cascading calssification model**
   <br>
   <br>
 
@@ -132,7 +135,7 @@ The results of this casceding classification model are presented in Fig. 5:
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
-  <br>**Fig. 5: Optical element prediction using the cascading calssification model**
+  <br>**Fig. 6: Optical element prediction using the cascading calssification model**
   <br>
   <br>
 
