@@ -97,7 +97,7 @@ The results of this casceding classification model are presented in Fig. 5:
 
   <img 
     width="500" 
-    src="https://github.com/user-attachments/assets/914c9f8c-246b-4e84-b868-3d320ff1e112" 
+    src="https://github.com/user-attachments/assets/07829e80-eee6-4b21-aaab-d449065ab6ae" 
     alt="neural_network_architecture_cascading" 
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
