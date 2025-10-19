@@ -34,7 +34,7 @@ This is presented in Fig. 1:
     style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
   />
 
-  <br>**Fig. 1: The wavefront aberration coefficients for different aberration types. left and right plots correspond to error values in the lower and upper quartile**
+  <br>**Fig. 1: The wavefront aberration coefficients for different aberration types. Left and right plots correspond to error values in the lower and upper quartile, respectively. A unique color is assigned to each unique wavefront coefficient (Zernike C2,Zernike C3, etc.)**
   <br>
   <br>
 
