@@ -8,8 +8,8 @@ The dataset is structured to link system parameters to specific aberration types
 
 | Column Group | Description | Examples |
 | :--- | :--- | :--- |
-| **Target Columns** | Aberration error types and their respective numeric error value. | `Tilt_E1`, `Decenter_E3`, *Numeric Value* |
-| **Feature Columns** | System parameters. | Wavefront Aberration Coefficients (Zernike C2,...,Zernike C37) and MTF score|
+| **Target Columns** | Aberration error types and their respective numeric error value. | `Tilt_E1`, `Decenter_E3`, 'Parameter Error' |
+| **Feature Columns** | System parameters. | Wavefront Aberration Coefficients ('Zernike C2',...,'Zernike C37') and 'MTF' score|
 
  
 **Note:** The *aberration error type* is composed of the **aberration type** and the **element name**, that is, for `Tilt_E1` the name 'Tilt' is the aberration type (which we denote as 'error_name') and the *element*, 'E1' (which we denote as 'parameter_name').
